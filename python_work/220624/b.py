@@ -1,3 +1,4 @@
+# 인자가 있는 함수
 def aaa(name,age):
     print(name,'hello')
     print(age)
