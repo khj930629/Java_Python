@@ -1,4 +1,2 @@
-for i in [7]:
-    for j in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
-        print(i*j, end=" ")
-    print("")
+for i in range(1,10):
+    print(7, 'x',i, '=', 7*i)

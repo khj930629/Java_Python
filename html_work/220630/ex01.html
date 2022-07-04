@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS3 Selector Basic</title>
+    <style>
+      h1 {
+        color: tomato;
+        background-color: gold;
+      }
+      li.select {
+        color: blueviolet;
+      }
+      .text {
+        height: 2rem;
+        background-color: red;
+      }
+      input[type="password"] {
+        background-color: blue;
+      }
+      img[src$="bmp"] {
+        border: 3px solid black;
+      }
+      img[src$="png"] {
+        border: 3px dotted red;
+      }
+      img[src$="jpeg"] {
+        border: 3px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="select">CSS3 Selector Basic</h1>
+    <ul>
+      <li class="select">Lorem ipsum</li>
+      <li>Lorem ipsum</li>
+      <li>Lorem ipsum</li>
+      <li>Lorem ipsum</li>
+    </ul>
+    <form>
+      <input class="text" type="text" />
+      <input type="password" />
+    </form>
+    <img src="image1.bmp" width="150" height="150" />
+    <img src="image2.png" width="150" height="150" />
+    <img src="image3.jpeg" width="150" height="150" />
+  </body>
+</html>
