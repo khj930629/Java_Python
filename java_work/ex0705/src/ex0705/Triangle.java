@@ -10,15 +10,18 @@ public class Triangle {
 	}
 
 	public double Area() {
-		double area = (width * height) / 2;
+		double area = (width * height) * 0.5d;
+		System.out.println("삼각형의 넓이 : " + area);
 		return area;
 	}
 
 	public static void main(String[] args) {
-		Triangle a = new Triangle(3.5, 2);
-		System.out.println("a 삼각형의 넓이 : " + a.Area());
+		Triangle t1 = new Triangle(3.5, 2);
+		t1.Area();
+//		System.out.println("t1 삼각형의 넓이 : " + t1.Area());
 
-		Triangle b = new Triangle(4, 5);
-		System.out.println("b 삼각형의 넓이 : " + b.Area());
+		Triangle t2 = new Triangle(4, 5);
+		t2.Area();
+//		System.out.println("b 삼각형의 넓이 : " + t2.Area());
 	}
 }

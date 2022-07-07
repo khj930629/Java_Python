@@ -20,8 +20,7 @@
 
 
 def birth_only(pn):
-    birthday = pn.split('-')
-    return birthday[0]
+    return pn.split('-')[0]
 
 
 p1 = "070609-2011xxx"
