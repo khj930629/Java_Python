@@ -5,8 +5,9 @@
     <fullyQualifiedTypeName name="bb.AAA"/>
     <fullyQualifiedTypeName name="cc.AAA"/>
     <fullyQualifiedTypeName name="ex0706.Car"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="ex0707.Cat"/>
     <fullyQualifiedTypeName name="zoo.Dog"/>
     <fullyQualifiedTypeName name="zoo.Cat"/>
+    <fullyQualifiedTypeName name="ex0712.AA"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
