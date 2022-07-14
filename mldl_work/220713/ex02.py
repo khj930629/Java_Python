@@ -10,7 +10,8 @@ print('npa', npa)
 
 print(npa.shape)
 
-# np.random.seed(42)
+np.random.seed(42)
 a = np.random.randint(1, 100, 5)
+np.random.shuffle(a)
 print(a)
 print(type(a))

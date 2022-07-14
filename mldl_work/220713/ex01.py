@@ -1,8 +1,7 @@
 from sklearn.neighbors import KNeighborsClassifier
+import numpy as np
+import matplotlib.pyplot as plt
 
-# 훈련 세트와 테스트 세트
-
-# 물고기 데이터 준비하기
 fish_length = [25.4, 26.3, 26.5, 29.0, 29.0, 29.7, 29.7, 30.0, 30.0, 30.7, 31.0, 31.0,
                31.5, 32.0, 32.0, 32.0, 33.0, 33.0, 33.5, 33.5, 34.0, 34.0, 34.5, 35.0,
                35.0, 35.0, 35.0, 36.0, 36.0, 37.0, 38.5, 38.5, 39.5, 41.0, 41.0, 9.8,
@@ -12,25 +11,46 @@ fish_weight = [242.0, 290.0, 340.0, 363.0, 430.0, 450.0, 500.0, 390.0, 450.0, 50
                700.0, 725.0, 720.0, 714.0, 850.0, 1000.0, 920.0, 955.0, 925.0, 975.0, 950.0, 6.7,
                7.5, 7.0, 9.7, 9.8, 8.7, 10.0, 9.9, 9.8, 12.2, 13.4, 12.2, 19.7, 19.9]
 
-print(len(fish_length))
-
-# 학습할 데이터 가공하기
 fish_data = [[l, w] for l, w in zip(fish_length, fish_weight)]
-fish_target = ['A']*35 + ['B']*14
-
-print(fish_data[:5])
-print(fish_data[44:])
-print(fish_target)
+fish_target = [1]*35 + [0]*14
 
 kn = KNeighborsClassifier()
 
-train_input = fish_data[:35]
-train_target = fish_data[:35]
+print(fish_data[4])
+print(fish_data[0:5])
+print(fish_data[:5])
+print(fish_data[44:])
 
-test_input = fish_data[:35]
-test_target = fish_data[:35]
+train_input = fish_data[:35]
+train_target = fish_target[:35]
+
+test_input = fish_data[35:]
+test_target = fish_target[35:]
 
 kn.fit(train_input, train_target)
-
 score = kn.score(test_input, test_target)
+
 print(score)
+
+np.random.seed(42)
+index = np.arange(49)
+np.random.shuffle(index)
+
+fish_data = np.array(fish_data)
+fish_target = np.array(fish_target)
+
+train_input = fish_data[index[:35]]
+# print(train_input[:35])
+train_target = fish_target[index[:35]]
+# print()
+
+test_input = fish_data[index[35:]]
+test_target = fish_target[index[35:]]
+
+kn.fit(train_input, train_target)
+score = kn.score(train_input, train_target)
+print(score)
+
+plt.scatter(train_input[:, 0], train_input[:, 1])
+plt.scatter(test_input[:, 0], test_input[:, 1])
+plt.show()

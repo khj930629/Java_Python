@@ -1,1 +1,9 @@
-{}
+{
+    "python.defaultInterpreterPath": "your_interpreter_path",
+    "python.autoComplete.extraPaths": [
+        "your_extra_package_paths"
+    ],
+    "python.analysis.extraPaths": [
+        "your_extra_package_paths"
+    ]
+}
