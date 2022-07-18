@@ -30,7 +30,7 @@ def imgdown(aa):
     plt.scatter(length, weight)
     plt.scatter(int(aa), lr.predict([[int(aa)]]))
     plt.savefig(img, format="png", dpi=100)
-    plt.close
+    plt.close()
     img.seek(0)
     return send_file(img, mimetype="image/png")
 
