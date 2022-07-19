@@ -2,9 +2,12 @@
 # 선형회귀 y = w(가중치)x + b(편향)
 import pandas as pd
 import numpy as np
+from matplotlib import rc
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+
+rc('font', family="AppleGothic")
 
 data = pd.read_csv('chap3.csv')
 
@@ -61,4 +64,7 @@ bias = lr.intercept_
 print(f'가중치 = {weight} 편향 = {bias}')
 
 plt.plot(np.arange(15, 50), prediction)
+plt.title("농어 데이터")
+plt.xlabel("길이")
+plt.ylabel("무게")
 plt.show()
