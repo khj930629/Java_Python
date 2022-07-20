@@ -26,7 +26,7 @@ def index():
 @app.route("/insert")
 def insert():
     con = pymysql.connect(host="localhost", user="root",
-                          passwd="1234", database="test", charset="utf8")
+                          passwd="Khj930629@", database="test", charset="utf8")
     cur = con.cursor()
 
     cur.execute("insert into fish (name,length,weight) values ('bream',45,650);")

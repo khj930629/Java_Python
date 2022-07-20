@@ -59,11 +59,12 @@ print(f"예측값 = {예측값}")
 
 예측점수 = lr.score(예측할데이터, 예측실제값)
 print(f"예측점수 = {예측점수}")
+
 poly = PolynomialFeatures()
 poly.fit([[2, 3]])
 train이삼 = poly.transform([[2, 3]])
 print(train이삼)
-print(poly.get_feature_names())
+print(poly.get_feature_names_out())
 
 poly = PolynomialFeatures(include_bias=False, degree=5)
 poly.fit(train_input)
@@ -89,6 +90,7 @@ print(f"예측값 = {예측값}")
 예측점수 = lr.score(예측할데이터_poly, 예측실제값)
 print(f"예측점수 = {예측점수}")
 
+# 규제 (라쏘, 릿지)
 ss = StandardScaler()
 ss.fit(train_poly)
 
@@ -106,7 +108,7 @@ test_score = []
 for alpha in alpha_list:
     ridge = Ridge(alpha=alpha)
     ridge.fit(train_scaled, train_target)
-    
+
     훈련점수 = ridge.score(train_scaled, train_target)
     테스트점수 = ridge.score(test_scaled, test_target)
     print(f'훈련점수 = {훈련점수} 테스트점수 = {테스트점수}')
